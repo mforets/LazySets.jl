@@ -581,7 +581,7 @@ A hyperrectangle.
 
 ```jldoctest
 julia> convert(Hyperrectangle, Interval(0.0, 1.0))
-Hyperrectangle{Float64,Array{Float64,1},Array{Float64,1}}([0.5], [0.5])
+Hyperrectangle{Float64, Vector{Float64}, Vector{Float64}}([0.5], [0.5])
 ```
 """
 function convert(::Type{Hyperrectangle}, H::AbstractHyperrectangle)

@@ -77,7 +77,7 @@ for N in [Float64, Rational{Int}, Float32]
             # returned set is universal
             @test linear_map(N[1 1], H) == Universe{N}(1)
         elseif N == Rational{Int}
-            @test lm isa Hyperplane{Rational{BigInt},Array{Rational{BigInt},1}}
+            @test lm isa Hyperplane{Rational{BigInt}, Vector{Rational{BigInt}}}
             @test lm.a == N[0//1, -1//1] && lm.b == N(0//1)
         end
     end

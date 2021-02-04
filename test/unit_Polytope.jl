@@ -139,7 +139,7 @@ for N in [Float64, Rational{Int}, Float32]
                 @test L7 ⊆ L7_vrep && L7_vrep ⊆ L7
             end
             # For Float32 we need to support mixed types,
-            # ρ(::Array{Float64,1}, ::HPolytope{Float32})
+            # ρ(::Vector{Float64}, ::HPolytope{Float32})
         end
     end
     # -----
@@ -204,7 +204,7 @@ end
 
 # default Float64 constructors
 @test HPolytope() isa HPolytope{Float64}
-@test VPolytope() isa VPolytope{Float64,Array{Float64,1}}
+@test VPolytope() isa VPolytope{Float64, Vector{Float64}}
 
 # tests that only work with Float64 and Float32
 for N in [Float64, Float32]
